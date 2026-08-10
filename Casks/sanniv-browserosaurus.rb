@@ -1,6 +1,6 @@
 cask "sanniv-browserosaurus" do
-  version "20.12.0"
-  sha256 "8f366b196a32ee09045fe413bd57e444eef1d3ac33b38bf6812b65e8bbf8aac4"
+  version "20.12.1"
+  sha256 "203b442eca0dffc07761bea245a68a81672fa9ac399d079d5e186bfef662e052"
 
   url "https://github.com/sanniv/sanniv-browserosaurus/releases/download/v#{version}-spaces-fix/sanniv-browserosaurus-#{version}.zip"
   name "sanniv-browserosaurus"
