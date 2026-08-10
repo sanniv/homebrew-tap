@@ -8,14 +8,17 @@ cask "sanniv-browserosaurus" do
   homepage "https://github.com/sanniv/sanniv-browserosaurus"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :big_sur"
 
   app "Browserosaurus.app"
 
+  postflight do
+    # Unsigned build: strip quarantine or macOS reports it as damaged
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Browserosaurus.app"]
+  end
+
   caveats <<~EOS
-    This build is not code-signed. Install with:
-      brew install --cask --no-quarantine sanniv/tap/sanniv-browserosaurus
-    If macOS still reports the app as damaged, run:
+    If macOS reports the app as damaged on first launch, run:
       xattr -dr com.apple.quarantine /Applications/Browserosaurus.app
   EOS
 

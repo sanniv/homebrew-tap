@@ -8,7 +8,7 @@ Source: https://github.com/sanniv/sanniv-browserosaurus (branch `fix/picker-wind
 
 ```bash
 brew tap sanniv/tap
-brew install --cask --no-quarantine sanniv-browserosaurus
+brew install --cask sanniv-browserosaurus
 ```
 
-`--no-quarantine` matters: the build is not code-signed, and without it macOS will report the app as "damaged". Apple Silicon only.
+The cask strips the quarantine flag automatically (unsigned build). Apple Silicon only.
